@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW06 - 臺中驛鐵道文化園區</title>
+    <!-- SEO 相關 Meta 標籤 -->
+    <meta name="description" content="臺中驛鐵道文化園區報導：從紅磚鐘塔到古典月台，探索國定古蹟臺中車站的百年鐵道風華。">
+    <meta name="author" content="D1485067 林芸溱">
+
+    <!-- 內部樣式表 (Internal Style Sheet) -->
+    <style>
+        /* ==========================================
+           1. 全域與無障礙設定 (Global & Accessibility)
+           ========================================== */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 元素選擇器：全頁基礎字體與行高設定 */
+        body {
+            font-family: "Microsoft JhengHei", "PingFang TC", "Heiti TC", sans-serif;
+            font-size: 1.8px;
+            line-height: 1.8;
+            color: #2D3732;
+            padding: 30px 15px;
+        }
+
+        /* 容器寬度限制與中央對齊 */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* 水平分隔線樣式 */
+        hr {
+            border: none;
+            border-top: 1px solid #D1CFC0;
+            margin: 20px 0;
+        }
+        /* 內文說明段落：左側焦糖棕色豎線 */
+.intro-text {
+    font-size: 16px;
+    color: #2D3732;
+    padding-left: 12px;               /* 留出文字與豎線的間距 */
+    border-left: 4px solid #C4823A;   /* 焦糖棕/金黃色垂直線 */
+    margin: 12px 0 16px 0;
+    line-height: 1.6;
+}
+        /* ==========================================
+   最底下頁尾區塊 - 對照老師範例樣式
+   ========================================== */
+
+/* 頂部雙分隔線：第一條淺灰線 + 第二條深綠線 */
+.footer-divider-top {
+    border: none;
+    border-top: 1px solid #D8D6C9; /* 上方淺灰細線 */
+    margin-bottom: 8px;
+}
+
+.footer-divider-main {
+    border: none;
+    border-top: 2px solid #4D6A55; /* 下方深綠主線 */
+    margin-bottom: 28px;
+}
+
+/* 頁尾文字容器：無白底卡片、內容置中 */
+footer.custom-footer {
+    background-color: transparent; /* 融入奶茶色背景 */
+    text-align: center;
+    padding: 10px 0 30px 0;
+    font-size: 15px;
+    color: #4A5568;
+}
+
+/* 標題與段落間距 */
+footer.custom-footer p {
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+/* 頁尾粗體標題 */
+footer.custom-footer .footer-title {
+    font-weight: bold;
+    color: #2D3732;
+    font-size: 17px;
+}
+
+/* 連結樣式：深綠色 + 下劃線 */
+footer.custom-footer a {
+    color: #2A5A44;
+    text-decoration: underline;
+    font-weight: 500;
+}
+
+footer.custom-footer a:hover {
+    color: #1E382B;
+}
+
+/* 回到頁首連結 */
+footer.custom-footer .back-to-top-link {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 16px;
+}
+        /* ==========================================
+           2. 卡片與排版區塊 (Card & Layout)
+           ========================================== */
+        /* Class 選擇器：卡片式外層邊框與陰影 */
+        .card {
+            background-color: #F8F7F2;
+            border-radius: 8px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border: 1px solid #E2E0D4;
+        }
+
+        /* 標題層次設定 */
+        h1 {
+            font-size: 32px;       /* 大尺寸突出主標題 */
+            font-weight: bold;
+            color: #FFFFFF;
+            margin-bottom: 16px;
+            line-height: 1.25;
+        }
+
+        h2 {
+           font-size: 22px;
+           color: #1E382B;
+           margin-bottom: 16px;
+           padding-left: 12px;              
+           border-left: 5px solid #4D6A55;   
+           line-height: 1.2;
+           border-bottom: none;              /* 👈 如果不需要下劃線可以拿掉，只留左側豎線 */
+           }
+        h3 {
+            font-size: 18px;
+            color: #1E382B;
+            margin: 12px 0 8px 0;
+        }
+
+        p {
+           font-size: 16px;       /* 標準閱讀字體 */
+           margin-bottom: 14px;
+           text-align: justify;
+        }
+        .header-card p {
+         font-size: 15px;
+         color: #E2E2D8;
+         margin-bottom: 10px;
+        }
+
+         .meta-info, caption, figcaption {
+         font-size: 14px;       /* 稍微偏小，呈現層次感 */
+         color: #A3B8AC;
+        }
+
+           /* 報導目錄的按鈕標籤文字 */
+         .toc-list li a {
+         font-size: 15px;
+        }
+
+        mark {
+            background-color: #D4A359;
+            color: #FFFFFF;
+            padding: 2px 6px;
+            border-radius: 3px;
+        }
+
+        /* ==========================================
+           3. 頁首卡片與目錄 (Header & Navigation)
+           ========================================== */
+        .header-card {
+            background-color: #1E382B;
+            color: #FFFFFF;
+            padding: 28px 24px;
+        }
+
+        .header-card p {
+            color: #E2E2D8;
+            margin-bottom: 8px;
+        }
+
+        .meta-info {
+            font-size: 0.82rem;
+            color: #A3B8AC;
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        /* 目錄導覽清單 */
+        .toc-list {
+            list-style: none;
+            padding-left: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .toc-list li a {
+            display: inline-block;
+            background-color: #E8E6DC;
+            color: #2D3732;
+            text-decoration: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.88rem;
+            border: 1px solid #D1CFC0;
+            transition: all 0.2s ease;
+        }
+
+        /* 連結 hover（滑鼠懸停）與 focus（鍵盤聚焦）提示 */
+        a {
+            color: #2A5A44;
+            text-decoration: none;
+        }
+
+        a:hover, .toc-list li a:hover {
+            color: #1E382B;
+            text-decoration: underline;
+        }
+
+        .toc-list li a:hover {
+            background-color: #D4A359;
+            color: #FFFFFF;
+            border-color: #D4A359;
+            text-decoration: none;
+        }
+
+        /* 鍵盤 Focus 焦點提示（無障礙設計） */
+        a:focus, .toc-list li a:focus, summary:focus {
+            outline: 3px solid #D4A359;
+            outline-offset: 2px;
+        }
+
+        /* ==========================================
+           4. 表格樣式 (CSS Table Styling)
+           ========================================== */
+        table {
+            width: 100%;
+            border-collapse: collapse; /* 移除外框間隙 */
+            margin: 12px 0;
+            font-size: 0.9rem;
+            background-color: #FFFFFF;
+        }
+
+        caption {
+            caption-side: top;
+            text-align: left;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #1E382B;
+        }
+
+        th {
+            background-color: #E2E0D4;
+            color: #1E382B;
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #D1CFC0;
+        }
+
+        td {
+            padding: 10px;
+            border: 1px solid #E8E6DC;
+        }
+
+        /* ==========================================
+           5. 媒體與 RWD 自適應 (Media Responsive)
+           ========================================== */
+        figure {
+            margin: 0;
+        }
+
+        /* 防止圖片超越寬度與變形 */
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            display: block;
+        }
+
+        figcaption {
+            font-size: 0.82rem;
+            color: #666666;
+            margin-top: 8px;
+        }
+
+        /* 影片與地圖 16:9 RWD 容器，防超出的寬度 */
+        .media-aspect-ratio {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 比例 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 6px;
+            margin: 12px 0;
+        }
+
+        .media-aspect-ratio iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* ==========================================
+           6. 清單與摺疊組件 (Lists & Details)
+           ========================================== */
+        ul, ol {
+            padding-left: 22px;
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        details {
+            background-color: #EFECE3;
+            border-left: 4px solid #D4A359;
+            padding: 12px 16px;
+            border-radius: 0 6px 6px 0;
+        }
+
+        summary {
+            cursor: pointer;
+            color: #1E382B;
+            font-weight: bold;
+            font-size: 18px;
+        }
+           #sec7, .highlight-card {
+           background-color: #ECEFE3;        /* 👈 老師範例的淡綠背景色 */
+           border-left: 6px solid #556B2F;   /* 👈 左側橄欖綠/深綠粗邊框 */
+           border-top: 1px solid #DFE3D5;    /* 上右下細邊框 */
+           border-right: 1px solid #DFE3D5;
+           border-bottom: 1px solid #DFE3D5;
+           border-radius: 8px;               /* 卡片圓角 */
+           padding: 24px;
+           margin-bottom: 20px;
+        }
+
+/* 「走讀小提醒」標題與左側綠色小豎線 */
+#sec7 h3 {
+    font-size: 20px;
+    color: #1E382B;
+    font-weight: bold;
+    margin-bottom: 16px;
+    padding-left: 12px;
+    border-left: 4px solid #556B2F;   /* 👈 標題左側綠色小裝飾線 */
+    line-height: 1.2;
+}
+
+/* 摺疊組件背景歸零（交由外層卡片控制背景） */
+#sec7 details {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+
+/* 「▼ 出發前與走讀時，記得這三件事」標題字體 */
+#sec7 summary {
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    color: #2D3732;
+    margin-bottom: 16px;
+}
+
+/* 點列式清單（縮排與文字間距） */
+#sec7 ul {
+    padding-left: 24px;
+    margin-top: 8px;
+}
+
+            #sec7 li {
+            font-size: 16px;
+    color: #333333;
+    margin-bottom: 10px;
+    line-height: 1.7;
+          }
+        /* ==========================================
+           7. ID 選擇器與頁尾 (ID Selectors & Footer)
+           ========================================== */
+        /* ID 選擇器範例 */
+        #photo img {
+            border: 2px solid #D1CFC0;
+        }
+
+        #video p {
+            font-size: 0.9rem;
+        }
+
+        .footer-card {
+            background-color: #1E382B;
+            color: #FFFFFF;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        .footer-card p {
+            color: #E2E2D8;
+            margin-bottom: 6px;
+        }
+
+        .footer-card a {
+            color: #D4A359;
+        }
+
+        .back-to-top {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 6px 16px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: #FFFFFF !important;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            transition: background-color 0.2s ease;
+        }
+
+        .back-to-top:hover {
+            background-color: #D4A359;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<!-- 行內 style 處 1：設定整體頁面的復古奶茶色 background-color -->
+<body id="top" style="background-color: #E2E2D8; min-height: 100vh;">
+
+<div class="container">
+
+    <!-- 頁首區塊 -->
+    <!-- 行內 style 處 2：增加頂部金色裝飾線條 border-top -->
+    <header class="card header-card" style="border-top: 5px solid #D4A359;">
+        <h1>臺中驛：城市裡的百年鐵道風華</h1>
+        <p>城市走讀・歷史地標・鐵道古蹟</p>
+        <p><strong>從紅磚鐘塔到古典月台，一起走進臺中的鐵道記憶。</strong></p>
+        <p>本縣焦點：<mark>百年歷史與鐵道風華</mark>，從老車站導覽延伸到位置地圖。</p>
+        <p class="meta-info">作者：D1485067 林芸溱 | 報導整理日期：2026 年 10 月 22 日<br>本文為資訊整理型教學報導，走讀鐵道走讀記錄。</p>
+    </header>
+
+    <hr>
+
+    <!-- 目錄區塊 -->
+    <section class="card">
+        <h3>報導目錄</h3>
+        <ul class="toc-list">
+            <li><a href="#sec1">一、驛站簡介</a></li>
+            <li><a href="#sec2">二、園區特色與散步順序</a></li>
+            <li><a href="#sec3">三、景點比較表</a></li>
+            <li><a href="#sec4">四、臺中驛照片</a></li>
+            <li><a href="#sec5">五、影音報導</a></li>
+            <li><a href="#sec6">六、位置地圖：找到臺中驛</a></li>
+            <li><a href="#sec7">走讀小提醒</a></li>
+            <li><a href="#sec8">七、資料來源</a></li>
+        </ul>
+    </section>
+
+    <hr>
+
+    <!-- 第一節 -->
+    <section class="card" id="sec1">
+        <h2>一、驛站簡介</h2>
+        <p>臺中驛（舊臺中車站）位於臺中市中心火車站專區，自 1905 年設站、現存國定古蹟站體於 1917 年落成以來，一直是臺中城市交通與歷史文化的核心地標。隨著鐵路高架化，舊站轉型為文化園區，讓人在現代城市生活節奏中，找到重溫鐵道繁華記憶的休憩空間。</p>
+        <p>園區內最具代表性的建築是第二代辰野風格紅磚造車站。這座建築見證了臺灣西部縱貫鐵路全線貫通的輝煌，後來被指定為國定古蹟，也是全臺保存最完整的經典車站建築之一。</p>
+        <p>從古典尖塔時鐘到高架綠空鐵道，臺中驛就像是一份可以慢慢閱讀的城市立體日記。本篇以景點整理與建議散步順序，介紹這座百年鐵道古蹟。</p>
+        <p>
+            園區地址：臺中市中區臺灣大道一段 1 號。<br>
+            閱讀重點：國定古蹟、辰野風格建築與鐵道文創。
+        </p>
+    </section>
+
+    <hr>
+
+    <!-- 第二節 -->
+    <section class="card" id="sec2">
+        <h2>二、園區特色與散步順序</h2>
+        <h3>值得留意的三個特色</h3>
+        <ul>
+            <li><strong>歷史建築：</strong>舊臺中車站保留了文藝復興式樣與紅磚白色橫環帶的辰野金吾風格。</li>
+            <li><strong>軌道風情：</strong>保留了第一月台、第二月台遮棚與實體靜態展示火車車廂。</li>
+            <li><strong>城市綠廊：</strong>連通臺中綠空鐵道，讓旅客能安全自在地沿著舊軌道漫步。</li>
+        </ul>
+
+        <h3>建議散步順序</h3>
+        <p class="intro-text">以下是本報導規劃的散步建議，您可以依方向彈性調整。</p>
+        <ol>
+            <li>進入舊站前廣場後，先抬頭欣賞鐘塔與立面勳章飾，確認導覽指示。</li>
+            <li>走進車站挑高大廳，觀賞大跨距木造屋架結構之美。</li>
+            <li>前往舊第一月台與軌道區，欣賞退役展示火車並拍照留念。</li>
+            <li>沿著鐵鹿大街或綠空鐵道散步，最後在文創商場休憩整理今日的心得。</li>
+        </ol>
+    </section>
+
+    <hr>
+
+    <!-- 第三節 -->
+    <section class="card" id="sec3">
+        <h2>三、景點比較表</h2>
+        <!-- 行內 style 處 3：確保表格在無障礙高對比模式下的外框與陰影呈現 -->
+        <table style="margin-top: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+            <caption>臺中驛主要代表性特色設施比較表</caption>
+            <thead>
+                <tr>
+                    <th>景點名稱</th>
+                    <th>主要特色</th>
+                    <th>建議參觀重點</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>舊車站大廳</td>
+                    <td>辰野風格紅磚造、尖頂鐘塔</td>
+                    <td>仔細欣賞外牆雕飾與挑高木構屋架</td></tr>
+                <tr>
+                    <td>古蹟月台區</td>
+                    <td>鑄鐵造月台雨棚與舊軌道</td>
+                    <td>漫步舊軌道旁感受早年搭車氛圍</td>
+                </tr>
+                <tr>
+                    <td>展示列車群</td>
+                    <td>靜態陳列 EMU100 自強號與經典客車</td>
+                    <td>與復古車廂拍照打卡並認識車輛型號</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <hr>
+
+    <!-- 第四節：圖片展示 -->
+    <section class="card" id="sec4">
+        <div id="photo">
+            <h2>四、經典車站寫真</h2>
+            <figure>
+                <img src="https://www.tcrp.com.tw/storage/upload/admin.html-editor/image/2023-08-10/SFCOmUvsyQyz5CnAFyCz6smdg1qMVe060inHxmEY.jpeg" alt="國定古蹟臺中火車站舊站紅磚建築" width="480">
+                <figcaption>
+                    臺中火車站舊站為臺灣現存最完整的日治時期大型車站建築之一。
+                    圖片來源：<a href="https://www.tcrp.com.tw/about" target="_blank" rel="noopener noreferrer">臺中驛鐵道文化園區</a>。
+                </figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <!-- 第五節：影音報導 -->
+    <section class="card" id="sec5">
+        <div id="video">
+            <h2>五、影音報導</h2>
+            <p>觀賞影片認識臺中驛鐵道文化園區的車站歷史、舊軌月台與鐵鹿大街導覽：</p>
+            
+            <!-- 使用 16:9 包覆容器防影片超出 -->
+            <div class="media-aspect-ratio">
+                <iframe 
+                    width="560" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/pKHrLUDgpHU" 
+                    title="【臺中驛鐵道文化園區全攻略】舊車站X鐵鹿大街X假日市集X快閃店X經典火車展覽" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+
+            <p>
+                若播放器無法播放，請
+                <a href="https://youtu.be/pKHrLUDgpHU" target="_blank" rel="noopener noreferrer">在 YouTube 觀看【臺中驛鐵道文化園區全攻略】導覽影片（另開分頁）</a>。
+            </p>
+            <p><small>影片來源：Marglue Channel（現場展覽與活動請以園區最新公告為準）。</small></p>
+        </div>
+    </section>
+
+    <hr>
+
+    <!-- 第六節：位置地圖 -->
+    <section class="card" id="sec6">
+        <h2>六、位置地圖：找到臺中驛</h2>
+        <p>臺中驛位於臺中市中區，地址為<strong>臺灣大道一段 1 號</strong>。下方地圖標示本文介紹的古蹟位置，方便讀者到訪園區與周邊街道。</p>
+        
+        <!-- 地圖 16:9 RWD 包覆容器 -->
+        <div class="media-aspect-ratio">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3640.8778601676643!2d120.68266297597148!3d24.137424073740293!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d0cf9beec89%3A0xe72688f40a1b6377!2z6Ie65Lit6LuK56uZ!5e0!3m2!1szh-TW!2stw!4v1710000000000!5m2!1szh-TW!2stw" width="480" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+
+        <p><a href="https://maps.google.com" target="_blank" rel="noopener noreferrer">在 Google 地圖開啟臺中驛（另開分頁）</a></p>
+        <p>地圖資訊由 Google 地圖提供；建議搭配園區導覽圖確認各入口與步道。</p>
+    </section>
+
+    <hr>
+
+    <!-- 走讀小提醒 -->
+    <section class="card" id="sec7">
+        <h3>走讀小提醒</h3>
+        <details open>
+            <summary>出發到園區走讀時，記得這三件事</summary>
+            <ul>
+                <li>攜帶防曬用品與飲用水，依天氣準備雨具。</li>
+                <li>在舊軌道區行走注意階梯與安全，尊重古蹟並維護環境整潔。</li>
+                <li>以相機或筆記記錄觀察；若有入館參觀，區分現場導覽與指引告示資料。</li>
+            </ul>
+        </details>
+    </section>
+
+    <hr>
+
+    <!-- 第七節：資料來源 -->
+    <section class="card" id="sec8">
+        <h2>七、資料來源</h2>
+        <p>本報導依下列資料整理，散步順序與圖面規劃感謝各出處作者貢獻。</p>
+        <ul>
+            <li><a href="https://www.tcrp.com.tw/" target="_blank" rel="noopener noreferrer">臺中驛鐵道文化園區官方網站</a></li>
+            <li><a href="https://www.tchac.taichung.gov.tw/building?uid=33&pid=1" target="_blank" rel="noopener noreferrer">臺中市文化資產處：國定古蹟 臺中火車站</a></li>
+            <li><a href="https://youtu.be/pKHrLUDgpHU" target="_blank" rel="noopener noreferrer">YouTube：【臺中驛鐵道文化園區全攻略】導覽影片</a></li>
+        </ul>
+        <p>資料整理日期：2026 年 10 月 22 日。</p>
+    </section>
+
+    <hr>
+
+   <!-- 頁尾前分隔線 -->
+    <hr class="footer-divider-top">
+    <hr class="footer-divider-main">
+
+   <!-- 頁尾區塊 -->
+<footer class="custom-footer" style="text-align: center !important;">
+    <p class="footer-title" style="text-align: center;">第六次 HTML 與 CSS 作業｜臺中驛報導</p>
+    <p style="text-align: center;">作者：D1485067 林芸溱・更新日期：2026 年 10 月 22 日</p>
+    <p style="text-align: center;">文字依來源整理；照片與影片權利屬原作者。本文為課堂作業。</p>
+    <p style="text-align: center;"><a href="#top" class="back-to-top-link">回到頁首</a></p>
+</footer>
+</div>
+
+</body>
+</html>
